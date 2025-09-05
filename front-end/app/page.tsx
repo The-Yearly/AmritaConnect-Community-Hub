@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Search } from "lucide-react";
 import CommunityFunction from "./Components/communityNews";
+import DiscussionGroups from "./Components/DiscussionCard";
 
 export default function Home() {
   const [search, setSearch] = useState("");
@@ -13,7 +14,7 @@ export default function Home() {
     { name: "Groups" },
   ];
   return (
-    <div className="flex flex-col min-h-screen w-full">
+    <div className="flex ml-107 flex-col min-h-screen w-full">
       <div className="border border-slate-200 flex items-center justify-center h-20">
         <div className="relative w-[98%] mx-3">
           <Search
@@ -45,7 +46,10 @@ export default function Home() {
         <div className="flex justify-center">
           <CommunityFunction />
         </div>
-        <p className="text-xl font-bold mt-4 ml-24">Trending Discussions</p>
+        <p className="text-xl font-bold mt-4 ml-32">Trending Discussions</p>
+        <div className="flex justify-center">
+          <DiscussionGroups />
+        </div>
       </div>
     </div>
   );

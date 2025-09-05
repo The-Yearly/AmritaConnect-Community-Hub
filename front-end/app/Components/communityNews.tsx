@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 function CommunityCard({ news }: { news: CardType }) {
   return (
-    <div className="border border-slate-200 rounded-2xl overflow-hidden transition-shadow duration-300 ">
+    <div className="border border-slate-200 rounded-2xl overflow-hidden  duration-300 ">
       <img
         alt="theme Heading"
         src={news.image}

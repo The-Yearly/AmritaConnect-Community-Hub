@@ -11,3 +11,10 @@ export interface CardType {
   title: string;
   desc: string;
 }
+
+export interface DiscussionCards {
+  title: string;
+  image?: string;
+  no_Of_Comments: number;
+  last_Updated: string;
+}
