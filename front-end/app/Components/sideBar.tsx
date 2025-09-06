@@ -10,37 +10,48 @@ import {
   Settings,
   Users,
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { navBarTypes } from "@/utils/types";
 export default function SideNavBar() {
   const [current, setCurrent] = useState("Home");
+  const [showNotifications, setShowNotifications] = useState(false);
+  useEffect(() => {
+    console.log("Notifications Are bEing shown is ", showNotifications);
+  }, [showNotifications]);
   const navItems: navBarTypes[] = [
     {
       name: "Home",
+      link: "/",
       icon: <House size={24} />,
     },
     {
       name: "Groups",
+      link: "/groups/explore",
       icon: <Users size={24} />,
     },
     {
       name: "Events",
+      link: "/Events",
       icon: <CalendarFold size={24} />,
     },
     {
       name: "Messages",
+      link: "/messages",
       icon: <MessageCircleMore size={24} />,
     },
     {
       name: "Notifications",
+      action: () => setShowNotifications(!showNotifications),
       icon: <Bell size={24} />,
     },
     {
       name: "Settings",
+      link: "/settings",
       icon: <Settings size={24} />,
     },
     {
       name: "Help And Feedback",
+      link: "/help&feedback",
       icon: <CircleQuestionMark size={24} />,
     },
   ];
@@ -63,16 +74,22 @@ export default function SideNavBar() {
 
         <ul className="space-y-2">
           {navItems.slice(0, navItems.length - 2).map((item, i) => (
-            <li key={i}>
-              <div
-                onClick={() => {
-                  setCurrent(item.name);
-                }}
+            <li
+              onClick={() => {
+                setCurrent(item.name);
+                if (item.action) {
+                  item.action();
+                }
+              }}
+              key={i}
+            >
+              <a
+                href={item.link}
                 className={`flex items-center gap-x-2 p-2 rounded-lg ${current == item.name ? "bg-slate-100  cursor" : ""} hover:bg-slate-100 transition-colors duration-500 ease-in-out cursor-pointer`}
               >
                 {item.icon}
                 <span>{item.name}</span>
-              </div>
+              </a>
             </li>
           ))}
         </ul>
