@@ -47,7 +47,7 @@ export default function Home() {
     { name: "Groups" },
   ];
   return (
-    <div className="flex ml-107 flex-col min-h-screen w-full">
+    <div className="flex flex-col min-h-screen w-full">
       <div className="border border-slate-200 flex items-center justify-center h-20">
         <div className="relative w-[98%] mx-3">
           <Search

@@ -15,7 +15,7 @@ export default function Explore() {
   ];
   const [search,setSearch]=useState("")
   return (
-    <div className="flex flex-col items-center justify-center mt-15 ml-107 px-4">
+    <div className="flex flex-col items-center justify-center mt-15 px-4">
       <div className="w-full max-w-[90rem]">
         <div className="flex mb-5 flex-col items-center">
           <p className="font-bold mb-4 text-5xl">Discover Your Community</p>

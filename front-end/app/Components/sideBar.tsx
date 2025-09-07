@@ -56,7 +56,7 @@ export default function SideNavBar() {
     },
   ];
   return (
-    <div className="w-[44vh] fixed min-h-screen border-r flex flex-col justify-between border-slate-200 shadow h-full p-4">
+    <div className="w-80 fixed min-h-screen border-r flex flex-col justify-between border-slate-200 shadow h-full p-4">
       <div>
         <div className="flex items-center mb-6 p-2 rounded-lg">
           <Image

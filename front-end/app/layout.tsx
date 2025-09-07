@@ -27,8 +27,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex`}
       >
-        <SideNavBar />
-        {children}
+          <SideNavBar />
+          <main className="ml-80 flex-1 min-h-screen">{children}</main>
       </body>
     </html>
   );

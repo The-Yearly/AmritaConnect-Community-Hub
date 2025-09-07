@@ -70,7 +70,7 @@ export default function CommunityGrids() {
       {Communities.map((community, i) => (
         <CommunityCard
           key={i}
-          errand={community}
+          room={community}
           varient={Communityvarients.exploreCard}
         />
       ))}
