@@ -13,10 +13,8 @@ import {
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { navBarTypes } from "@/utils/types";
-export default function SideNavBar() {
+export default function SideNavBar({ miniSideBar }: { miniSideBar: boolean }) {
   const [current, setCurrent] = useState("Home");
-  const path=usePathname()
-  const miniSideBar=path.includes("/groups/info")
   const [showNotifications, setShowNotifications] = useState(false);
   useEffect(() => {
     console.log("Notifications Are bEing shown is ", showNotifications);
@@ -59,7 +57,9 @@ export default function SideNavBar() {
     },
   ];
   return (
-    <div className={`${miniSideBar?"w-24":"w-80"} fixed min-h-screen border-r flex flex-col ${miniSideBar&&"items-center"} justify-between border-slate-200 shadow h-full p-4`}>
+    <div
+      className={`${miniSideBar ? "w-24" : "w-80"} col-span-3 fixed min-h-screen border-r flex flex-col ${miniSideBar && "items-center"} justify-between border-slate-200 shadow h-full p-4`}
+    >
       <div>
         <div className="flex items-center mb-6 p-2 rounded-lg">
           <Image
@@ -67,15 +67,19 @@ export default function SideNavBar() {
             height={64}
             alt="Profile picture"
             src={myPhoto}
-            className={`${miniSideBar?"w-12 h-12":"w-16 h-16"} rounded-full`}
+            className={`${miniSideBar ? "w-12 h-12" : "w-16 h-16"} rounded-full`}
           />
-          {!miniSideBar&&<div className="ml-4">
-            <p className="text-md font-semibold">TheYearly</p>
-            <p className="text-sm text-gray-600">Student</p>
-          </div>}
+          {!miniSideBar && (
+            <div className="ml-4">
+              <p className="text-md font-semibold">TheYearly</p>
+              <p className="text-sm text-gray-600">Student</p>
+            </div>
+          )}
         </div>
 
-        <ul className={`space-y-2 flex flex-col ${miniSideBar&&"items-center"}`}>
+        <ul
+          className={`space-y-2 flex flex-col ${miniSideBar && "items-center"}`}
+        >
           {navItems.slice(0, navItems.length - 2).map((item, i) => (
             <li
               onClick={() => {
@@ -91,7 +95,7 @@ export default function SideNavBar() {
                 className={`flex items-center gap-x-2 p-2 rounded-lg ${current == item.name ? `bg-slate-100 cursor` : ""} hover:bg-slate-100 transition-colors duration-500 ease-in-out cursor-pointer`}
               >
                 {item.icon}
-                {!miniSideBar&&<span>{item.name}</span>}
+                {!miniSideBar && <span>{item.name}</span>}
               </a>
             </li>
           ))}
@@ -110,7 +114,7 @@ export default function SideNavBar() {
                   className={`flex items-center gap-x-2 p-2 rounded-lg ${current == item.name ? "bg-slate-100  cursor" : ""} hover:bg-slate-100  cursor-pointer`}
                 >
                   {item.icon}
-                  <span>{!miniSideBar&&item.name}</span>
+                  <span>{!miniSideBar && item.name}</span>
                 </div>
               </li>
             ))}

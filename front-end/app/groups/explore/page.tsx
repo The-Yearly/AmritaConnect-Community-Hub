@@ -13,7 +13,7 @@ export default function Explore() {
     "Drawing",
     "Running",
   ];
-  const [search,setSearch]=useState("")
+  const [search, setSearch] = useState("");
   return (
     <div className="flex flex-col items-center justify-center mt-15 px-4">
       <div className="w-full max-w-[90rem]">
@@ -26,7 +26,11 @@ export default function Explore() {
         </div>
         <div className="relative w-full mb-6">
           <Search className="absolute top-1/2 left-4 transform -translate-y-1/2 text-gray-500" />
-    <SearchaBar inputValue={search} placeHolderValue="Discover.." onChange={(e)=>setSearch(e.target.value)}/>
+          <SearchaBar
+            inputValue={search}
+            placeHolderValue="Discover.."
+            onChange={(e) => setSearch(e.target.value)}
+          />
         </div>
         <p className="font-semibold text-2xl my-5">Categories</p>
         <motion.div

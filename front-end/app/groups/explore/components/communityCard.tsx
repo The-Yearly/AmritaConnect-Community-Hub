@@ -2,7 +2,10 @@ import { Communities } from "@/utils/types";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Communityvarients } from "@/utils/types";
-export default function CommunityCard({room,varient}: {
+export default function CommunityCard({
+  room,
+  varient,
+}: {
   room: Communities;
   varient: Communityvarients;
 }) {
@@ -25,7 +28,7 @@ export default function CommunityCard({room,varient}: {
             ))}
           </div>
           <img
-            src={room.room_pic||"/a.svg"}
+            src={room.room_pic || "/a.svg"}
             className="w-full h-48 object-cover rounded"
             alt="Image"
           />
