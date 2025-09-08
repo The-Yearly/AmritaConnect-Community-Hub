@@ -13,9 +13,9 @@ export default function AppWrapper({
     <>
       <SideNavBar miniSideBar={miniSideBar} />
       <main
-        className={`col-span-15 ${
-          miniSideBar ? "col-start-2" : "col-start-4"
-        } min-h-screen w`}
+        className={`${
+          miniSideBar ? "col-start-2 col-span-17" : "col-start-4 col-span-15"
+        } min-h-screen w-full`}
       >
         {children}
       </main>

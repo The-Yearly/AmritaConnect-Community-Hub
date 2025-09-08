@@ -11,10 +11,10 @@ export default function SideGroupInfo() {
       "A community for developers, engineers, and tech lovers to discuss trends, share projects, and learn together.",
     users: new Array(102).fill(10),
   };
-  const relatedGroups=new Array(3).fill(10)
+  const relatedGroups = new Array(3).fill(10);
   return (
-    <div className="p-6 h-full">
-      <div className="grid-cols-3 border-neutral-100 rounded-2xl border flex flex-col space-y-5 items-center shadow-md w-full h-full">
+    <div className="h-full">
+      <div className="border-neutral-100 rounded-2xl border flex flex-col space-y-5 items-center shadow-md w-full h-full">
         <div className="px-6 w-full mt-6 space-y-5">
           <p className="mt-5 font-bold text-2xl">{groupData.room_title}</p>
           <p className="text-neutral-600">{groupData.room_desc}</p>
@@ -28,21 +28,22 @@ export default function SideGroupInfo() {
             Members ({groupData.users.length})
           </p>
           <div className="flex ml-2">
-            {groupData.users
-              .slice(0, 5)
-              .map((user, i) =>
-                i != 4 ? (
-                  <img
-                    key={i}
-                    className="h-14 w-14 rounded-full -ml-3"
-                    src={`https://avatar.iran.liara.run/public/boy?username=[${i}]`}
-                  />
-                ) : (
-                  <div key={i} className="bg-neutral-300 h-14 w-14 rounded-full -ml-5 flex items-center justify-center text-stone-500">
-                    + {groupData.users.length - 4}
-                  </div>
-                ),
-              )}
+            {groupData.users.slice(0, 5).map((user, i) =>
+              i != 4 ? (
+                <img
+                  key={i}
+                  className="h-14 w-14 rounded-full -ml-3"
+                  src={`https://avatar.iran.liara.run/public/boy?username=[${i}]`}
+                />
+              ) : (
+                <div
+                  key={i}
+                  className="bg-neutral-300 h-14 w-14 rounded-full -ml-5 flex items-center justify-center text-stone-500"
+                >
+                  + {groupData.users.length - 4}
+                </div>
+              ),
+            )}
           </div>
           <div className="border-b-1 border-neutral-300" />
         </div>
@@ -53,18 +54,22 @@ export default function SideGroupInfo() {
           </div>
           <div className="border-b-1 border-neutral-300" />
         </div>
-                <div className="px-6 w-full space-y-2">
+        <div className="px-6 w-full space-y-2">
           <p className="mt-2 font-bold text-2xl">Related Groups</p>
-          {relatedGroups.map((group,i)=>
-          <div key={i} className="mt-5 flex space-y-3 ml-2">
-            <img src={"https://picsum.photos/200/300"} className="h-18 w-18 rounded-lg"/>
-            <div className="items-center ml-3">
-              <p className="font-bold mt-1 line-clamp-2 ">Visual Arts Club</p>
-              <p className="text-neutral-500 line-clamp-1">Design And Creativity</p>
+          {relatedGroups.map((group, i) => (
+            <div key={i} className="mt-5 flex space-y-3 ml-2">
+              <img
+                src={"https://picsum.photos/200/300"}
+                className="h-18 w-18 rounded-lg"
+              />
+              <div className="items-center ml-3">
+                <p className="font-bold mt-1 line-clamp-2 ">Visual Arts Club</p>
+                <p className="text-neutral-500 line-clamp-1">
+                  Design And Creativity
+                </p>
+              </div>
             </div>
-          </div>
-)}
-          
+          ))}
         </div>
       </div>
     </div>

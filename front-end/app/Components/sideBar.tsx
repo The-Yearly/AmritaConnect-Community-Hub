@@ -58,7 +58,7 @@ export default function SideNavBar({ miniSideBar }: { miniSideBar: boolean }) {
   ];
   return (
     <div
-      className={`${miniSideBar ? "w-24" : "w-80"} col-span-3 fixed min-h-screen border-r flex flex-col ${miniSideBar && "items-center"} justify-between border-slate-200 shadow h-full p-4`}
+      className={`${miniSideBar ? "w-24 col-span-1" : "w-80 col-span-3"}  fixed min-h-screen border-r flex flex-col ${miniSideBar && "items-center"} justify-between border-slate-200 shadow h-full p-4`}
     >
       <div>
         <div className="flex items-center mb-6 p-2 rounded-lg">
